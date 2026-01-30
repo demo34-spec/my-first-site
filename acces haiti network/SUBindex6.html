@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>network access haiti </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="website icon" type="image/png" href="img/wifi-antenna-icon-logo-design-vector.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body.form {
+            background: linear-gradient(135deg, rgba(3, 13, 60, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%), 
+                url('img/nature.html.jpg') no-repeat center center;
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body.form::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .title-big {
+            text-align: center;
+            color: #14048f;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-group label {
+            display: inline;
+            margin-left: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #274ef9 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 30px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Social Media Icons Styling */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Facebook */
+        .social-icon.facebook {
+            background: #1877f2;
+            color: white;
+            box-shadow: 0 0 20px rgba(24, 119, 242, 0.6);
+        }
+
+        .social-icon.facebook:hover {
+            box-shadow: 0 0 40px rgba(24, 119, 242, 1), 0 0 80px rgba(24, 119, 242, 0.5);
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        /* Twitter/X */
+        .social-icon.twitter {
+            background: #000000;
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .social-icon.twitter:hover {
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(100, 100, 100, 0.5);
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        /* Instagram */
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            box-shadow: 0 0 20px rgba(224, 144, 51, 0.6);
+        }
+
+        .social-icon.instagram:hover {
+            box-shadow: 0 0 40px rgba(220, 39, 67, 1), 0 0 80px rgba(188, 24, 136, 0.5);
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        /* GitHub */
+        .social-icon.github {
+            background: #333333;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(51, 51, 51, 0.6);
+        }
+
+        .social-icon.github:hover {
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(200, 200, 200, 0.5);
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        /* LinkedIn */
+        .social-icon.linkedin {
+            background: #0a66c2;
+            color: white;
+            box-shadow: 0 0 20px rgba(10, 102, 194, 0.6);
+        }
+
+        .social-icon.linkedin:hover {
+            box-shadow: 0 0 40px rgba(10, 102, 194, 1), 0 0 80px rgba(10, 102, 194, 0.5);
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .social-icons-label {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="form">
+    <div class="container">
+        <h1 class="title-big">Fill in Your Information</h1>
+        
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+
+             <div class="form-group">
+                <label for="date">year of birth</label>
+                <input type="date" id="yearof" name="yearofbirth" required>
+             </div>
+
+             <div class="form-group">
+                <label for="gender"></label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">male</label>
+
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">female</label>
+             </div>
+               
+             <div class="form-group">
+                <label for="phonenumber">Phone Number</label>
+                <input type="number" id="phonenumber" name="Phonenumber" required>
+             </div>
+
+             <div class="form-group">
+                <label for="email">Your email</label>
+                <input type="email" id="email" name="email" required>
+             </div>
+
+             <button type="submit" class="submit-btn">create</button>
+
+             <!-- Social Media Icons with Glow Effect -->
+             <div class="social-icons">
+                 <a href="https://facebook.com" target="_blank" class="social-icon facebook" title="Facebook">
+                     <i class="fab fa-facebook-f"></i>
+                 </a>
+                 <a href="https://twitter.com" target="_blank" class="social-icon twitter" title="Twitter/X">
+                     <i class="fab fa-x-twitter"></i>
+                 </a>
+                 <a href="https://instagram.com" target="_blank" class="social-icon instagram" title="Instagram">
+                     <i class="fab fa-instagram"></i>
+                 </a>
+                 <a href="https://github.com" target="_blank" class="social-icon github" title="GitHub">
+                     <i class="fab fa-github"></i>
+                 </a>
+                 <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+                     <i class="fab fa-linkedin-in"></i>
+                 </a>
+             </div>
+             <div class="social-icons-label">Follow us on social media</div>
+
+
+
+
+             
+
+    </div>
+
+
+</body>
+</html>
